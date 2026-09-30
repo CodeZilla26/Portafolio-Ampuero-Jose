@@ -26,58 +26,34 @@ export const EXPERIENCES: ExperienceItem[] = [
   {
     id: 'madrisqui',
     company: 'Inversiones Madrisqui S.A.C.',
-    role: 'Practicante de Desarrollo Frontend / Backend / Software',
+    role: 'Practicante de Desarrollo de Software',
     period: 'Marzo 2025 – Setiembre 2026',
     location: 'Lima, Perú',
     type: 'hybrid',
     category: 'fullstack',
-    summary: 'Desarrollo integral de sistemas internos, combinando interfaces interactivas con consumo de APIs, flujos backend en Python/PHP, optimización de consultas SQL y automatización de pruebas críticas.',
-    achievements: {
-      frontend: [
-        'Diseñé e implementé interfaces de usuario utilizando React, Vite y estilos modernos con Tailwind CSS, estructurando componentes modulares y optimizando la navegación en sistemas internos.',
-        'Desarrollé la comunicación cliente-servidor mediante consumo de APIs REST, gestionando estados asíncronos, validación tipada de formularios y manejo dinámico de datos.',
-        'Implementé pruebas y flujos automatizados de navegación con Playwright, validando flujos críticos como autenticación, gestión documental y consistencia visual.'
-      ],
-      backend: [
-        'Diseñé y mantuve módulos backend utilizando Python (Flask) y PHP, implementando controladores y lógica de negocio para la gestión segura de datos en sistemas internos.',
-        'Estructuré esquemas de datos relacionales y optimicé consultas complejas en MySQL, garantizando integridad de transacciones y rapidez en la generación de reportes.',
-        'Desarrollé flujos automatizados con Python, Playwright y Selenium para procesamiento masivo de información, validación documental y tareas programadas.'
-      ],
-      general: [
-        'Arquitectura modular con TypeScript garantizando cero discrepancias en los tipos de datos entre el cliente y el servidor.',
-        'Automatización de pruebas end-to-end con Playwright para flujos de autenticación y carga de documentos sensibles.',
-        'Control de versiones colaborativo con Git y GitHub mediante flujos de Pull Requests y resolución ágil de incidencias.'
-      ]
-    },
-    technologies: ['React', 'Vite', 'Tailwind CSS', 'Python (Flask)', 'PHP', 'MySQL', 'Playwright', 'Selenium', 'APIs REST', 'Git/GitHub']
+    summary: 'Desarrollo integral de sistemas internos: creación de interfaces de usuario modernas, integración de APIs REST, servicios backend en Python/PHP y automatización de pruebas críticas.',
+    achievements: [
+      'Desarrollo de interfaces reactivas con React, Vite y Tailwind CSS, integrando el consumo de APIs REST con manejo eficiente de estados.',
+      'Construcción y mantenimiento de módulos backend en Python (Flask) y PHP, optimizando esquemas y consultas en MySQL.',
+      'Automatización de pruebas end-to-end con Playwright para flujos críticos de autenticación y validación documental.'
+    ],
+    technologies: ['React', 'Vite', 'Tailwind CSS', 'Python (Flask)', 'PHP', 'MySQL', 'Playwright', 'APIs REST', 'Git/GitHub']
   },
   {
     id: 'zonatech',
     company: 'ZonaTech Perú',
-    role: 'Desarrollador Frontend React / Software Web',
+    role: 'Desarrollador de Software Web',
     period: 'Enero – Diciembre 2024',
     location: 'Remoto',
     type: 'remote',
-    category: 'frontend',
-    summary: 'Construcción de interfaces responsivas de alto rendimiento, integración de servicios web y aseguramiento de calidad con pruebas unitarias en Jest.',
-    achievements: {
-      frontend: [
-        'Construí interfaces web responsivas con React, TypeScript, JavaScript (ES6+), HTML5 y CSS3, asegurando fidelidad visual y adaptabilidad multidispositivo.',
-        'Implementé el consumo centralizado de APIs REST utilizando Fetch y Axios, agilizando la presentación de información y reduciendo tiempos de carga.',
-        'Diseñé e integré pruebas unitarias con Jest para verificar la estabilidad de componentes clave, colaborando bajo flujo de ramas en Git/GitHub.'
-      ],
-      backend: [
-        'Desarrollé la comunicación entre clientes web y servicios backend mediante APIs REST, validando contratos de datos y payloads con tipado estricto en TypeScript.',
-        'Implementé validaciones y manejo preventivo de errores HTTP para envíos sensibles, reduciendo discrepancias en las peticiones.',
-        'Ejecuté pruebas funcionales con Jest para asegurar el cumplimiento de la lógica de negocio y excepciones.'
-      ],
-      general: [
-        'Estructuración de componentes limpios y reutilizables siguiendo principios SOLID y Clean Code.',
-        'Integración continua de servicios RESTful optimizando el ciclo de vida de peticiones asíncronas.',
-        'Colaboración remota ágil en Git/GitHub con revisiones de código y control estricto de versiones.'
-      ]
-    },
-    technologies: ['React', 'TypeScript', 'JavaScript (ES6+)', 'HTML5', 'CSS3', 'APIs REST', 'Axios / Fetch', 'Jest', 'Git/GitHub']
+    category: 'fullstack',
+    summary: 'Construcción de interfaces responsivas de alto rendimiento, integración cliente-servidor y aseguramiento de calidad con pruebas unitarias.',
+    achievements: [
+      'Maquetación de interfaces web responsivas y modulares utilizando React, TypeScript, HTML5 y CSS3.',
+      'Integración cliente-servidor con APIs REST mediante Fetch y Axios, gestionando validaciones y manejo de errores con tipado estricto.',
+      'Diseño e integración de pruebas unitarias con Jest para validar componentes y lógica de negocio bajo control de versiones Git.'
+    ],
+    technologies: ['React', 'TypeScript', 'JavaScript (ES6+)', 'APIs REST', 'Axios / Fetch', 'Jest', 'Git/GitHub']
   }
 ];
 

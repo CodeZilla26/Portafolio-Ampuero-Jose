@@ -1,8 +1,6 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PortfolioStateService } from '../../services/portfolio-state.service';
 import { EXPERIENCES } from '../../data/portfolio.data';
-import { ExperienceItem } from '../../models/portfolio.model';
 
 @Component({
   selector: 'app-experience',
@@ -12,34 +10,15 @@ import { ExperienceItem } from '../../models/portfolio.model';
     <section id="experiencia" class="py-20 border-t border-slate-800/80 relative">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <!-- Section Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div class="text-left max-w-2xl">
-            <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
-              <span>02. Trayectoria Laboral</span>
-              <span class="w-12 h-px bg-cyan-400/40"></span>
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Experiencia Profesional
-            </h2>
-            <p class="text-slate-400 text-sm sm:text-base mt-2">
-              Impacto directo en desarrollo de software, interfaces reactivas, optimización de endpoints y automatización.
-            </p>
+        <!-- Section Header (Clean without extra text) -->
+        <div class="text-left max-w-2xl mb-14">
+          <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
+            <span>02. Trayectoria Laboral</span>
+            <span class="w-12 h-px bg-cyan-400/40"></span>
           </div>
-
-          <!-- View Filter for Experience Achievements -->
-          <div class="flex items-center bg-slate-900 border border-slate-800 rounded-xl p-1 text-xs self-start md:self-end">
-            <button 
-              *ngFor="let filter of achievementFilters"
-              (click)="activeExperienceFilter.set(filter.key)"
-              [class.bg-cyan-600]="activeExperienceFilter() === filter.key"
-              [class.text-white]="activeExperienceFilter() === filter.key"
-              [class.shadow-sm]="activeExperienceFilter() === filter.key"
-              [class.text-slate-400]="activeExperienceFilter() !== filter.key"
-              class="px-3 py-1.5 rounded-lg font-medium transition-all">
-              {{ filter.label }}
-            </button>
-          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Experiencia Profesional
+          </h2>
         </div>
 
         <!-- Experience Timeline -->
@@ -56,7 +35,7 @@ import { ExperienceItem } from '../../models/portfolio.model';
 
             <!-- Experience Card -->
             <div class="ml-8 md:ml-0 md:w-1/2">
-              <div class="p-6 sm:p-7 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 backdrop-blur-sm transition-all duration-300 shadow-xl group">
+              <div class="p-6 sm:p-7 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/30 backdrop-blur-sm transition-all duration-300 shadow-xl group">
                 
                 <!-- Period & Location Badges -->
                 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
@@ -80,19 +59,15 @@ import { ExperienceItem } from '../../models/portfolio.model';
                 <h3 class="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
                   {{ exp.company }}
                 </h3>
-                <p class="text-sm font-medium text-indigo-300 mb-3">
+                <p class="text-sm font-medium text-indigo-300 mb-4">
                   {{ exp.role }}
                 </p>
 
-                <p class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-4">
-                  {{ exp.summary }}
-                </p>
-
-                <!-- Bullet Points of Achievements -->
-                <div class="space-y-2.5 pt-2 border-t border-slate-800">
-                  <div *ngFor="let item of getFilteredAchievements(exp)" 
+                <!-- Bullet Points of Summarized Achievements -->
+                <div class="space-y-2.5 pt-3 border-t border-slate-800">
+                  <div *ngFor="let item of exp.achievements" 
                        class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-300 leading-relaxed">
-                    <span class="text-cyan-400 font-bold mt-1 text-xs">▹</span>
+                    <span class="text-cyan-400 font-bold mt-0.5 text-xs">▹</span>
                     <span>{{ item }}</span>
                   </div>
                 </div>
@@ -117,35 +92,5 @@ import { ExperienceItem } from '../../models/portfolio.model';
   `
 })
 export class ExperienceComponent {
-  readonly state = inject(PortfolioStateService);
   readonly experiences = EXPERIENCES;
-
-  readonly activeExperienceFilter = signal<'all' | 'frontend' | 'backend'>('all');
-
-  readonly achievementFilters = [
-    { key: 'all' as const, label: 'Visión Global' },
-    { key: 'frontend' as const, label: 'Logros Frontend' },
-    { key: 'backend' as const, label: 'Logros Backend' }
-  ];
-
-  getFilteredAchievements(exp: ExperienceItem): string[] {
-    const filter = this.activeExperienceFilter();
-
-    if (filter === 'frontend' && exp.achievements.frontend) {
-      return exp.achievements.frontend;
-    }
-    if (filter === 'backend' && exp.achievements.backend) {
-      return exp.achievements.backend;
-    }
-
-    // Default: Return frontend + backend combined highlights
-    const list: string[] = [];
-    if (exp.achievements.frontend) {
-      list.push(...exp.achievements.frontend.slice(0, 2));
-    }
-    if (exp.achievements.backend) {
-      list.push(...exp.achievements.backend.slice(0, 2));
-    }
-    return list.length > 0 ? list : exp.achievements.general;
-  }
 }

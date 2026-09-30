@@ -9,11 +9,7 @@ export interface ExperienceItem {
   type: 'hybrid' | 'remote' | 'onsite';
   category: 'frontend' | 'backend' | 'fullstack';
   summary: string;
-  achievements: {
-    frontend?: string[];
-    backend?: string[];
-    general: string[];
-  };
+  achievements: string[];
   technologies: string[];
 }
 
