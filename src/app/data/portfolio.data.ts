@@ -93,9 +93,9 @@ export const ANGULAR_STAR_PROJECT: ProjectShowcase = {
       tag: 'Clean UI Architecture'
     }
   ],
-  technologies: ['Angular 22', 'TypeScript', 'Tailwind CSS v4', 'Cloud Firestore', 'Signals', 'Standalone API', 'RxJS', 'Vite / @angular/build'],
-  githubUrl: 'https://github.com/CodeZilla26/finanzen-app',
-  demoUrl: '#simulador-finanzen',
+  technologies: ['Angular', 'TypeScript', 'Tailwind CSS', 'Firebase'],
+  githubUrl: 'https://github.com/CodeZilla26/FinanZen',
+  demoUrl: 'https://github.com/CodeZilla26/FinanZen',
   docsUrl: 'FinanZen.md'
 };
 
