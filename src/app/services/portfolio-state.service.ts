@@ -1,13 +1,4 @@
-import { Injectable, computed, signal } from '@angular/core';
-
-export interface SimulatedMovement {
-  id: string;
-  title: string;
-  amount: number;
-  type: 'income' | 'expense';
-  category: string;
-  date: string;
-}
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -25,60 +16,6 @@ export class PortfolioStateService {
 
   // Active filter for skills
   readonly activeSkillFilter = signal<'all' | 'frontend' | 'backend' | 'database' | 'testing' | 'tools'>('all');
-
-  // Project architecture tabs
-  readonly activeProjectTab = signal<'simulator' | 'architecture' | 'metrics'>('simulator');
-
-  // FinanZen Interactive Simulator in-memory reactive state
-  readonly simulatedMovements = signal<SimulatedMovement[]>([
-    {
-      id: '1',
-      title: 'Desarrollo Frontend React/Tailwind',
-      amount: 2800,
-      type: 'income',
-      category: 'Salario',
-      date: 'Hoy, 09:30 AM'
-    },
-    {
-      id: '2',
-      title: 'Hosting & Servidor Cloud VPS',
-      amount: 145,
-      type: 'expense',
-      category: 'Servicios',
-      date: 'Ayer, 04:15 PM'
-    },
-    {
-      id: '3',
-      title: 'Proyecto Freelance API Node.js',
-      amount: 1650,
-      type: 'income',
-      category: 'Freelance',
-      date: '28 Set, 11:00 AM'
-    },
-    {
-      id: '4',
-      title: 'Licencia Software & Dominios',
-      amount: 89,
-      type: 'expense',
-      category: 'Herramientas',
-      date: '27 Set, 02:40 PM'
-    }
-  ]);
-
-  // Reactive computed signals for the simulator
-  readonly totalIncome = computed(() =>
-    this.simulatedMovements()
-      .filter((m) => m.type === 'income')
-      .reduce((acc, curr) => acc + curr.amount, 0)
-  );
-
-  readonly totalExpense = computed(() =>
-    this.simulatedMovements()
-      .filter((m) => m.type === 'expense')
-      .reduce((acc, curr) => acc + curr.amount, 0)
-  );
-
-  readonly currentBalance = computed(() => this.totalIncome() - this.totalExpense());
 
   constructor() {
     this.initializeTheme();
@@ -155,60 +92,5 @@ export class PortfolioStateService {
 
   closeCvModal(): void {
     this.isCvModalOpen.set(false);
-  }
-
-  // --- FinanZen Mini-Simulator Actions ---
-  addSimulatedMovement(title: string, amount: number, type: 'income' | 'expense', category: string): void {
-    if (!title.trim() || amount <= 0) {
-      this.showToast('Por favor ingresa un concepto y monto válido mayor a 0');
-      return;
-    }
-
-    const newMovement: SimulatedMovement = {
-      id: Date.now().toString(),
-      title: title.trim(),
-      amount: Math.round(amount * 100) / 100,
-      type,
-      category,
-      date: 'Recién agregado'
-    };
-
-    this.simulatedMovements.update((prev) => [newMovement, ...prev]);
-    this.showToast(`✓ Movimiento registrado: S/ ${newMovement.amount.toFixed(2)} (${newMovement.type === 'income' ? 'Ingreso' : 'Gasto'})`);
-  }
-
-  removeSimulatedMovement(id: string): void {
-    this.simulatedMovements.update((prev) => prev.filter((m) => m.id !== id));
-    this.showToast('Movimiento eliminado del simulador');
-  }
-
-  resetSimulatedMovements(): void {
-    this.simulatedMovements.set([
-      {
-        id: '1',
-        title: 'Desarrollo Frontend React/Tailwind',
-        amount: 2800,
-        type: 'income',
-        category: 'Salario',
-        date: 'Hoy, 09:30 AM'
-      },
-      {
-        id: '2',
-        title: 'Hosting & Servidor Cloud VPS',
-        amount: 145,
-        type: 'expense',
-        category: 'Servicios',
-        date: 'Ayer, 04:15 PM'
-      },
-      {
-        id: '3',
-        title: 'Proyecto Freelance API Node.js',
-        amount: 1650,
-        type: 'income',
-        category: 'Freelance',
-        date: '28 Set, 11:00 AM'
-      }
-    ]);
-    this.showToast('Simulador reiniciado con datos de demostración');
   }
 }
