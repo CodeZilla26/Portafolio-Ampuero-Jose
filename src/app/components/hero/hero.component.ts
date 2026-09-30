@@ -8,23 +8,12 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="relative pt-24 pb-28 md:pt-36 md:pb-40 overflow-hidden flex items-center justify-center">
+    <section class="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden px-4 sm:px-6 lg:px-8 py-12">
       <!-- Glow ambient background -->
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-cyan-500/15 via-indigo-500/15 to-purple-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
       
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
+      <div class="max-w-4xl w-full text-center space-y-8 my-auto">
         
-        <!-- Status Pill -->
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs text-slate-300 shadow-inner">
-          <span class="relative flex h-2 w-2">
-            <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-            <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-          </span>
-          <span class="font-medium text-slate-300">Disponible para nuevos proyectos</span>
-          <span class="text-slate-600">•</span>
-          <span class="text-cyan-400 font-mono text-[11px]">Lima, Perú / Remoto</span>
-        </div>
-
         <!-- Main Heading with Name -->
         <div class="space-y-4">
           <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-tight text-white leading-tight">
@@ -44,7 +33,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
         </div>
 
         <!-- Direct Links: Descargar CV, GitHub y LinkedIn -->
-        <div class="flex flex-wrap items-center justify-center gap-4 pt-4">
+        <div class="flex flex-wrap items-center justify-center gap-4 pt-2">
           
           <!-- Descargar CV CTA -->
           <button 
