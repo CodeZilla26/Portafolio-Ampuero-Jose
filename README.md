@@ -122,7 +122,7 @@ portfolio/
 
 1. **Clonar el repositorio:**
    ```bash
-   git clone https://github.com/JoseAmpuero/portfolio.git
+   git clone https://github.com/CodeZilla26/portfolio.git
    cd portfolio
    ```
 
@@ -177,7 +177,7 @@ portfolio/
 * **Correo:** [ampuerovillanueva@gmail.com](mailto:ampuerovillanueva@gmail.com)
 * **Teléfono / WhatsApp:** [+51 945 362 326](https://wa.me/51945362326)
 * **LinkedIn:** [linkedin.com/in/jose-ampuero-b1aba7345/](https://www.linkedin.com/in/jose-ampuero-b1aba7345/)
-* **GitHub:** [github.com/JoseAmpuero](https://github.com/JoseAmpuero)
+* **GitHub:** [github.com/CodeZilla26](https://github.com/CodeZilla26)
 
 ---
 *Hecho con dedicación, código limpio y arquitectura moderna en Angular 22 & Tailwind CSS v4.*

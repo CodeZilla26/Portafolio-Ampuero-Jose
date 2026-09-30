@@ -14,7 +14,7 @@ export const PERSONAL_INFO = {
   phone: '+51 945 362 326',
   whatsappUrl: 'https://wa.me/51945362326?text=Hola%20Jose,%20vi%20tu%20portafolio%20y%20me%20gustar%C3%ADa%20conversar',
   linkedinUrl: 'https://www.linkedin.com/in/jose-ampuero-b1aba7345/',
-  githubUrl: 'https://github.com/JoseAmpuero',
+  githubUrl: 'https://github.com/CodeZilla26',
   bio: {
     fullstack: 'Bachiller en Ingeniería de Sistemas con sólida experiencia tanto en la construcción de interfaces web modernas y fluidas (Angular, React, Tailwind CSS) como en el diseño de arquitecturas backend robustas, APIs REST seguras (Node.js, Express, Python Flask) y automatización con Playwright. Enfoque riguroso en tipado seguro, calidad de código y rendimiento.',
     frontend: 'Especializado en diseñar e implementar experiencias digitales fluidas, optimizadas y responsivas. Dominio de Angular (Signals & Standalone), React, TypeScript y Tailwind CSS v4, con un fuerte estándar en arquitectura de componentes modulares, gestión de estado reactivo y pruebas de interfaz con Playwright y Jest.',
@@ -118,7 +118,7 @@ export const ANGULAR_STAR_PROJECT: ProjectShowcase = {
     }
   ],
   technologies: ['Angular 22', 'TypeScript', 'Tailwind CSS v4', 'Cloud Firestore', 'Signals', 'Standalone API', 'RxJS', 'Vite / @angular/build'],
-  githubUrl: 'https://github.com/JoseAmpuero/finanzen-app',
+  githubUrl: 'https://github.com/CodeZilla26/finanzen-app',
   demoUrl: '#simulador-finanzen',
   docsUrl: 'FinanZen.md'
 };
