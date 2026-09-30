@@ -110,12 +110,6 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
               </span>
             </a>
 
-            <!-- Location Badge -->
-            <div class="p-4 rounded-xl bg-slate-950/60 border border-slate-800 text-xs font-mono text-slate-400 flex items-center gap-3">
-              <span class="text-base">📍</span>
-              <span>Lima, Perú • Disponible para trabajo Remoto, Híbrido o Presencial.</span>
-            </div>
-
           </div>
 
           <!-- Right Column: Interactive Message Composer (7 cols) -->
