@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 interface SkillTech {
@@ -7,7 +7,6 @@ interface SkillTech {
 }
 
 interface SkillCategory {
-  id: 'frontend' | 'backend' | 'database' | 'testing' | 'tools';
   title: string;
   items: SkillTech[];
 }
@@ -21,37 +20,19 @@ interface SkillCategory {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
-          <div class="text-left max-w-2xl">
-            <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
-              <span>05. Stack Tecnológico</span>
-              <span class="w-12 h-px bg-cyan-400/40"></span>
-            </div>
-            <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
-              Habilidades
-            </h2>
+        <div class="text-left max-w-2xl mb-12">
+          <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
+            <span>05. Stack Tecnológico</span>
+            <span class="w-12 h-px bg-cyan-400/40"></span>
           </div>
-
-          <!-- Category Filter Tabs -->
-          <div class="flex flex-wrap gap-1.5 bg-slate-900 border border-slate-800 p-1 rounded-xl text-xs self-start md:self-end">
-            <button 
-              *ngFor="let tab of filterTabs"
-              (click)="selectedFilter.set(tab.key)"
-              [class.bg-gradient-to-r]="selectedFilter() === tab.key"
-              [class.from-cyan-600]="selectedFilter() === tab.key"
-              [class.to-indigo-600]="selectedFilter() === tab.key"
-              [class.text-white]="selectedFilter() === tab.key"
-              [class.shadow-md]="selectedFilter() === tab.key"
-              [class.text-slate-400]="selectedFilter() !== tab.key"
-              class="px-3 py-1.5 rounded-lg font-medium transition-all">
-              {{ tab.label }}
-            </button>
-          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+            Habilidades
+          </h2>
         </div>
 
-        <!-- Categorized Skills Grid -->
+        <!-- Categorized Skills Grid (Direct Separation, No Filters) -->
         <div class="space-y-10">
-          <div *ngFor="let cat of visibleCategories()" class="space-y-4">
+          <div *ngFor="let cat of categories" class="space-y-4">
             
             <!-- Category Title Line -->
             <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-400 flex items-center gap-3">
@@ -234,20 +215,8 @@ interface SkillCategory {
   `
 })
 export class SkillsComponent {
-  readonly selectedFilter = signal<'all' | 'frontend' | 'backend' | 'database' | 'testing' | 'tools'>('all');
-
-  readonly filterTabs = [
-    { key: 'all' as const, label: 'Todas' },
-    { key: 'frontend' as const, label: 'Frontend' },
-    { key: 'backend' as const, label: 'Backend' },
-    { key: 'database' as const, label: 'Bases de Datos' },
-    { key: 'testing' as const, label: 'Testing' },
-    { key: 'tools' as const, label: 'Herramientas' }
-  ];
-
   readonly categories: SkillCategory[] = [
     {
-      id: 'frontend',
       title: 'Frontend',
       items: [
         { name: 'Angular', icon: 'angular' },
@@ -261,7 +230,6 @@ export class SkillsComponent {
       ]
     },
     {
-      id: 'backend',
       title: 'Backend & APIs',
       items: [
         { name: 'Node.js', icon: 'nodejs' },
@@ -273,7 +241,6 @@ export class SkillsComponent {
       ]
     },
     {
-      id: 'database',
       title: 'Bases de Datos',
       items: [
         { name: 'MySQL', icon: 'mysql' },
@@ -282,7 +249,6 @@ export class SkillsComponent {
       ]
     },
     {
-      id: 'testing',
       title: 'Testing & Automatización',
       items: [
         { name: 'Playwright', icon: 'playwright' },
@@ -291,7 +257,6 @@ export class SkillsComponent {
       ]
     },
     {
-      id: 'tools',
       title: 'Herramientas',
       items: [
         { name: 'Git', icon: 'git' },
@@ -302,10 +267,4 @@ export class SkillsComponent {
       ]
     }
   ];
-
-  readonly visibleCategories = computed(() => {
-    const filter = this.selectedFilter();
-    if (filter === 'all') return this.categories;
-    return this.categories.filter((c) => c.id === filter);
-  });
 }
