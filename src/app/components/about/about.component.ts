@@ -22,7 +22,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
           </h2>
         </div>
 
-        <!-- Two Column Layout: Photo + Personal Story -->
+        <!-- Two Column Layout: Photo + Clean Personal Text -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
           
           <!-- Photo Column -->
@@ -42,49 +42,15 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
             </div>
           </div>
 
-          <!-- Personal Story Card -->
-          <div class="lg:col-span-8 p-6 sm:p-8 md:p-10 rounded-3xl bg-slate-900/70 border border-slate-800 backdrop-blur-sm relative overflow-hidden space-y-6">
-            
-            <div class="space-y-4">
-              <div class="w-11 h-11 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shadow-md">
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-              </div>
+          <!-- Clean Personal Card without icons or tags -->
+          <div class="lg:col-span-8 p-6 sm:p-8 md:p-10 rounded-3xl bg-slate-900/70 border border-slate-800 backdrop-blur-sm relative overflow-hidden flex flex-col justify-center space-y-6">
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+              Mi fascinación por la tecnología nació de una profunda curiosidad por entender cómo funcionan las cosas y del entusiasmo por crear herramientas que resuelvan necesidades reales. Para mí, programar es el punto de encuentro perfecto entre la lógica, la creatividad y la resolución práctica de problemas.
+            </p>
 
-              <h3 class="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-                Quién soy y qué me apasiona
-              </h3>
-
-              <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Mi fascinación por la tecnología nació de una profunda curiosidad por entender cómo funcionan las cosas y del entusiasmo por crear herramientas que resuelvan necesidades reales. Para mí, programar es el punto de encuentro perfecto entre la lógica, la creatividad y la resolución práctica de problemas.
-              </p>
-
-              <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-                Me considero una persona perseverante, observadora y con un compromiso genuino con el aprendizaje continuo. Disfruto dedicarle tiempo a los detalles, entender el fondo de cada desafío y buscar constantemente mejores formas de hacer las cosas.
-              </p>
-
-              <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
-                Creo firmemente en el valor de la empatía, la comunicación transparente y la colaboración en equipo. Más allá del código, me motiva saber que lo que construyo tiene un impacto positivo en las personas que lo utilizan día a día.
-              </p>
-            </div>
-
-            <!-- Personal Facets (Clean and human) -->
-            <div class="pt-6 border-t border-slate-800/80 grid grid-cols-1 sm:grid-cols-3 gap-3">
-              <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
-                <span class="text-cyan-400 text-sm">💡</span>
-                <span>Curiosidad constante</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
-                <span class="text-indigo-400 text-sm">🎯</span>
-                <span>Atención al detalle</span>
-              </div>
-              <div class="flex items-center gap-2 text-xs sm:text-sm text-slate-300">
-                <span class="text-emerald-400 text-sm">🤝</span>
-                <span>Trabajo en equipo</span>
-              </div>
-            </div>
-
+            <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
+              Me considero una persona perseverante, observadora y con un compromiso genuino con el aprendizaje continuo. Disfruto dedicarle tiempo a los detalles, entender el fondo de cada desafío y buscar constantemente mejores formas de hacer las cosas.
+            </p>
           </div>
 
         </div>
