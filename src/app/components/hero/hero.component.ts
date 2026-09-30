@@ -8,7 +8,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section class="relative pt-12 pb-20 md:pt-20 md:pb-28 overflow-hidden">
+    <section class="relative pt-16 pb-20 md:pt-24 md:pb-28 overflow-hidden">
       <!-- Glow ambient background -->
       <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] bg-gradient-to-tr from-cyan-500/15 via-indigo-500/15 to-purple-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
       
@@ -16,39 +16,28 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
         
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           
-          <!-- Left Column: Bio, Titles, and CTAs -->
+          <!-- Left Column: Name, Title & Direct Links (GitHub, LinkedIn, Descargar CV) -->
           <div class="lg:col-span-7 space-y-6 text-left">
             
-            <!-- Status Pill -->
-            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900/90 border border-slate-800 text-xs text-slate-300 shadow-inner">
-              <span class="relative flex h-2 w-2">
-                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span class="font-medium text-slate-300">Disponible para nuevos desafíos</span>
-              <span class="text-slate-600">•</span>
-              <span class="text-cyan-400 font-mono text-[11px]">Lima, Perú / Remoto</span>
-            </div>
-
-            <!-- Main Heading with Name and Accent -->
-            <div class="space-y-2">
-              <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-white leading-tight">
-                Hola, soy <br class="hidden sm:inline" />
+            <!-- Main Heading with Name -->
+            <div class="space-y-3">
+              <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-white leading-tight">
+                Hola, soy <br />
                 <span class="bg-gradient-to-r from-cyan-400 via-teal-300 to-indigo-400 bg-clip-text text-transparent">
                   Jose Ampuero
                 </span>
               </h1>
               
-              <!-- Direct Full Stack Role -->
+              <!-- Role Subtitle: Ingeniero de Software -->
               <div class="flex items-center gap-2 pt-1">
-                <span class="text-xl sm:text-2xl font-bold text-slate-100 font-mono flex items-center gap-2">
+                <span class="text-2xl sm:text-3xl font-bold text-slate-100 font-mono flex items-center gap-2">
                   <span class="text-cyan-400">&gt;</span>
-                  <span>Full Stack Software Engineer</span>
+                  <span>Ingeniero de Software</span>
                 </span>
               </div>
 
               <!-- Degree Badge -->
-              <p class="text-xs sm:text-sm font-mono text-cyan-400/90 flex items-center gap-2">
+              <p class="text-xs sm:text-sm font-mono text-cyan-400/90 flex items-center gap-2 pt-1">
                 <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path d="M12 14l9-5-9-5-9 5 9 5z" />
                   <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
@@ -57,91 +46,41 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
               </p>
             </div>
 
-            <!-- Full Stack Bio -->
-            <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
-              Desarrollador de software con visión de extremo a extremo: construyo interfaces web modernas, fluidas y responsivas con <strong class="text-cyan-300 font-medium">Angular 22 (Signals)</strong> y <strong class="text-cyan-300 font-medium">React</strong>, respaldadas por arquitecturas backend robustas en <strong class="text-indigo-300 font-medium">Node.js, Express y Python</strong>, persistencia en <strong class="text-emerald-300 font-medium">MySQL y Cloud Firestore</strong>, y aseguramiento de calidad con <strong class="text-purple-300 font-medium">Playwright y Jest</strong>.
-            </p>
-
-            <!-- Full Stack Architecture Core Pillars Strip -->
-            <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-2xl space-y-3 max-w-xl backdrop-blur-sm">
-              <div class="flex items-center justify-between text-xs text-slate-400">
-                <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
-                  <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                  </svg>
-                  Pilares de Ingeniería Full Stack:
-                </span>
-                <span class="text-[11px] text-cyan-400 font-mono">
-                  Extremo a Extremo
-                </span>
-              </div>
-
-              <div class="grid grid-cols-2 gap-2 text-xs">
-                <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1">
-                  <div class="font-semibold text-cyan-300 flex items-center gap-1.5 text-xs">
-                    <span>🎨</span>
-                    <span>Frontend & UI</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 leading-snug">
-                    Angular 22 Signals, React, Tailwind CSS v4, Vite
-                  </div>
-                </div>
-
-                <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1">
-                  <div class="font-semibold text-indigo-300 flex items-center gap-1.5 text-xs">
-                    <span>⚙️</span>
-                    <span>Backend & APIs</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 leading-snug">
-                    Node.js, Express, Python Flask, APIs RESTful
-                  </div>
-                </div>
-
-                <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1">
-                  <div class="font-semibold text-emerald-300 flex items-center gap-1.5 text-xs">
-                    <span>🗄️</span>
-                    <span>Bases de Datos</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 leading-snug">
-                    MySQL (Relacional), Cloud Firestore (Realtime)
-                  </div>
-                </div>
-
-                <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1">
-                  <div class="font-semibold text-purple-300 flex items-center gap-1.5 text-xs">
-                    <span>🧪</span>
-                    <span>Testing & Calidad</span>
-                  </div>
-                  <div class="text-[11px] text-slate-400 leading-snug">
-                    Playwright (E2E & Scraping), Jest (Unit)
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- CTAs and Direct Actions -->
-            <div class="flex flex-wrap items-center gap-3 pt-2">
-              <a href="#proyectos" 
-                 class="px-5 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 flex items-center gap-2 cursor-pointer">
-                <span>Ver Proyecto en Angular</span>
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                </svg>
-              </a>
-
-              <a href="#contacto" 
-                 class="px-5 py-3 rounded-xl font-semibold text-sm bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex items-center gap-2 cursor-pointer">
-                <span>Contactar</span>
-              </a>
-
+            <!-- Direct Links: GitHub, LinkedIn y Descargar CV -->
+            <div class="flex flex-wrap items-center gap-3.5 pt-4">
+              
+              <!-- Descargar CV CTA -->
               <button 
-                (click)="state.copyToClipboard(info.email, 'Email copiado: ' + info.email)"
-                class="px-4 py-3 rounded-xl font-medium text-xs font-mono bg-slate-900/60 hover:bg-slate-900 text-cyan-400 border border-slate-800 transition-all flex items-center gap-2 cursor-pointer">
-                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                (click)="state.openCvModal()"
+                class="px-5 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 flex items-center gap-2 cursor-pointer">
+                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                <span>{{ info.email }}</span>
+                <span>Descargar CV</span>
               </button>
+
+              <!-- GitHub Link -->
+              <a [href]="info.githubUrl" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="px-5 py-3 rounded-xl font-semibold text-sm bg-slate-900 hover:bg-slate-800 text-slate-100 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm">
+                <svg class="w-4 h-4 text-slate-200" fill="currentColor" viewBox="0 0 24 24">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                </svg>
+                <span>GitHub</span>
+              </a>
+
+              <!-- LinkedIn Link -->
+              <a [href]="info.linkedinUrl" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 class="px-5 py-3 rounded-xl font-semibold text-sm bg-slate-900 hover:bg-slate-800 text-slate-100 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex items-center gap-2 cursor-pointer shadow-sm">
+                <svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+                <span>LinkedIn</span>
+              </a>
+
             </div>
 
           </div>
@@ -156,7 +95,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                   <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
                   <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                   <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                  <span class="ml-2 font-mono text-xs text-slate-400 font-medium">ampuero&#64;fullstack:~</span>
+                  <span class="ml-2 font-mono text-xs text-slate-400 font-medium">ampuero&#64;developer:~</span>
                 </div>
                 <div class="flex items-center gap-1.5 text-[11px] font-mono text-cyan-400">
                   <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -184,20 +123,23 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 
                 <!-- Tab: info.json -->
                 <div *ngIf="activeTerminalTab() === 'info'" class="space-y-1.5">
-                  <p class="text-slate-500">$ cat fullstack-profile.json</p>
+                  <p class="text-slate-500">$ cat profile.json</p>
                   <pre class="text-cyan-300 text-[11.5px] leading-snug">
 &#123;
   "name": "{{ info.fullName }}",
-  "role": "Full Stack Software Engineer",
+  "role": "Ingeniero de Software",
   "degree": "Bachiller en Ingeniería de Sistemas",
   "university": "Universidad César Vallejo",
   "location": "Lima, Perú",
-  "stack": &#123;
-    "frontend": ["Angular 22 Signals", "React", "Next.js", "Tailwind CSS v4"],
-    "backend": ["Node.js", "Express", "Python Flask", "PHP", "APIs REST"],
-    "databases": ["MySQL", "Cloud Firestore"],
-    "testing": ["Playwright (E2E & Scraping)", "Jest (Unit)"]
-  &#125;,
+  "stack": [
+    "Angular (Signals, Standalone)",
+    "React / Next.js",
+    "TypeScript",
+    "Node.js & Express",
+    "Python (Flask)",
+    "MySQL & Cloud Firestore"
+  ],
+  "testing": "Playwright (E2E) & Jest (Unit)",
   "open_to_work": true
 &#125;</pre>
                 </div>
@@ -206,13 +148,13 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 <div *ngIf="activeTerminalTab() === 'git'" class="space-y-2">
                   <p class="text-slate-500">$ git status --short --branch</p>
                   <p class="text-emerald-400">## main...origin/main [up to date]</p>
-                  <p class="text-slate-400"># Arquitectura unificada Full Stack:</p>
+                  <p class="text-slate-400"># Arquitectura de software:</p>
                   <p class="text-indigo-300"> M src/app/projects/finanzen.component.ts</p>
                   <p class="text-cyan-300"> M src/app/signals/reactive-state.ts</p>
                   <p class="text-yellow-300"> A src/app/testing/e2e-playwright.spec.ts</p>
                   <p class="text-slate-400 pt-2">nothing to commit, working tree clean</p>
                   <p class="text-slate-500 pt-2">$ git log -1 --pretty=format:"%h - %s (%cr)"</p>
-                  <p class="text-purple-300">8f21bc9 - feat: unify Full Stack architecture & Angular Signals (today)</p>
+                  <p class="text-purple-300">8f21bc9 - feat: Angular Signals architecture & Dark Mode v4 (today)</p>
                 </div>
 
                 <!-- Tab: npm test -->
