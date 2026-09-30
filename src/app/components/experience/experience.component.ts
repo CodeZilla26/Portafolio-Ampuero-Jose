@@ -7,7 +7,7 @@ import { EXPERIENCES } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="experiencia" class="py-20 border-t border-slate-800/80 relative">
+    <section id="experiencia" class="py-20 border-t border-slate-800/80 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header (Clean without extra text) -->
@@ -25,7 +25,7 @@ import { EXPERIENCES } from '../../data/portfolio.data';
         <div class="space-y-8 relative before:absolute before:inset-0 before:left-3 md:before:left-1/2 before:w-0.5 before:bg-gradient-to-b before:from-cyan-500 before:via-indigo-500 before:to-transparent before:-translate-x-1/2">
           
           <div *ngFor="let exp of experiences; let i = index" 
-               class="relative flex flex-col md:flex-row items-start gap-6 md:gap-12"
+               class="relative flex flex-col md:flex-row items-start gap-6 md:gap-12 w-full max-w-full"
                [class.md:flex-row-reverse]="i % 2 !== 0">
             
             <!-- Timeline Center Marker / Node -->
@@ -34,8 +34,8 @@ import { EXPERIENCES } from '../../data/portfolio.data';
             </div>
 
             <!-- Experience Card -->
-            <div class="ml-8 md:ml-0 md:w-1/2">
-              <div class="p-6 sm:p-7 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/30 backdrop-blur-sm transition-all duration-300 shadow-xl group">
+            <div class="ml-7 sm:ml-8 md:ml-0 md:w-1/2 w-[calc(100%-1.75rem)] sm:w-[calc(100%-2rem)] max-w-full min-w-0">
+              <div class="p-5 sm:p-7 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/30 backdrop-blur-sm transition-all duration-300 shadow-xl group overflow-hidden">
                 
                 <!-- Period & Location Badges -->
                 <div class="flex flex-wrap items-center justify-between gap-2 mb-3">

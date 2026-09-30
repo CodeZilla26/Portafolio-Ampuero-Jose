@@ -7,7 +7,7 @@ import { EDUCATION_DATA } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="educacion" class="py-20 border-t border-slate-800/80 relative">
+    <section id="educacion" class="py-20 border-t border-slate-800/80 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
@@ -23,12 +23,12 @@ import { EDUCATION_DATA } from '../../data/portfolio.data';
 
         <!-- Clean Modern Education Card -->
         <div class="max-w-4xl mx-auto">
-          <div class="relative rounded-2xl bg-slate-900/60 border border-slate-800 p-6 sm:p-8 hover:border-slate-700/80 transition-all backdrop-blur-sm">
+          <div class="relative rounded-2xl bg-slate-900/60 border border-slate-800 p-5 sm:p-8 hover:border-slate-700/80 transition-all backdrop-blur-sm overflow-hidden">
             
             <!-- Subtle Left Accent Indicator -->
             <div class="absolute top-6 bottom-6 left-0 w-1 bg-gradient-to-b from-cyan-400 via-indigo-500 to-transparent rounded-r"></div>
 
-            <div class="pl-2 sm:pl-4 space-y-4">
+            <div class="pl-1 sm:pl-4 space-y-4 min-w-0 break-words">
               <!-- Status & Meta Row -->
               <div class="flex flex-wrap items-center justify-between gap-3">
                 <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-950/80 text-emerald-400 border border-emerald-800/60">

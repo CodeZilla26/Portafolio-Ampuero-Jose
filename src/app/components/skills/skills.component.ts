@@ -16,7 +16,7 @@ interface SkillCategory {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="skills" class="py-20 border-t border-slate-800/80 relative">
+    <section id="skills" class="py-20 border-t border-slate-800/80 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
@@ -41,12 +41,12 @@ interface SkillCategory {
             </h3>
 
             <!-- Tech Items Grid (Only Icon + Name) -->
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-3 sm:gap-4">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2.5 sm:gap-4">
               <div *ngFor="let tech of cat.items"
-                   class="flex items-center gap-3.5 p-3.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-cyan-500/5 transition-all group cursor-default">
+                   class="flex items-center gap-2.5 sm:gap-3.5 p-2.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-cyan-500/5 transition-all group cursor-default min-w-0 overflow-hidden">
                 
                 <!-- Icon Box -->
-                <div class="w-10 h-10 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-center p-2 shrink-0 group-hover:scale-110 transition-transform">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-center p-1.5 sm:p-2 shrink-0 group-hover:scale-110 transition-transform">
                   <ng-container [ngSwitch]="tech.icon">
                     
                     <!-- Angular -->
@@ -200,7 +200,7 @@ interface SkillCategory {
                 </div>
 
                 <!-- Tech Name -->
-                <span class="text-sm sm:text-base font-semibold text-slate-200 group-hover:text-white transition-colors">
+                <span class="text-xs min-[400px]:text-sm sm:text-base font-semibold text-slate-200 group-hover:text-white transition-colors truncate min-w-0" [title]="tech.name">
                   {{ tech.name }}
                 </span>
 

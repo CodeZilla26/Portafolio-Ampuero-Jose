@@ -8,7 +8,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <footer class="py-12 border-t border-slate-800/80 bg-slate-950 text-slate-400 text-xs">
+    <footer class="py-12 border-t border-slate-800/80 bg-slate-950 text-slate-400 text-xs w-full max-w-full overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         
         <!-- Left: Branding & Role -->

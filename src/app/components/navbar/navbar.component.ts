@@ -7,7 +7,7 @@ import { PortfolioStateService } from '../../services/portfolio-state.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <header class="sticky top-0 z-40 w-full backdrop-blur-md bg-slate-950/80 dark:bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300">
+    <header class="sticky top-0 z-40 w-full max-w-full backdrop-blur-md bg-slate-950/80 dark:bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300 overflow-x-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
         
         <!-- Brand Logo -->
