@@ -1,4 +1,4 @@
-import { Component, computed, inject, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PortfolioStateService } from '../../services/portfolio-state.service';
 import { PERSONAL_INFO } from '../../data/portfolio.data';
@@ -39,10 +39,11 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 </span>
               </h1>
               
-              <!-- Dynamic Role based on Active Profile Mode -->
+              <!-- Direct Full Stack Role -->
               <div class="flex items-center gap-2 pt-1">
-                <span class="text-lg sm:text-2xl font-bold text-slate-200">
-                  {{ dynamicRole() }}
+                <span class="text-xl sm:text-2xl font-bold text-slate-100 font-mono flex items-center gap-2">
+                  <span class="text-cyan-400">&gt;</span>
+                  <span>Full Stack Software Engineer</span>
                 </span>
               </div>
 
@@ -56,71 +57,72 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
               </p>
             </div>
 
-            <!-- Dynamic Description Bio -->
+            <!-- Full Stack Bio -->
             <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-normal">
-              {{ dynamicBio() }}
+              Desarrollador de software con visión de extremo a extremo: construyo interfaces web modernas, fluidas y responsivas con <strong class="text-cyan-300 font-medium">Angular 22 (Signals)</strong> y <strong class="text-cyan-300 font-medium">React</strong>, respaldadas por arquitecturas backend robustas en <strong class="text-indigo-300 font-medium">Node.js, Express y Python</strong>, persistencia en <strong class="text-emerald-300 font-medium">MySQL y Cloud Firestore</strong>, y aseguramiento de calidad con <strong class="text-purple-300 font-medium">Playwright y Jest</strong>.
             </p>
 
-            <!-- Mode Selector Switcher on Hero -->
-            <div class="p-3 bg-slate-900/80 border border-slate-800 rounded-xl space-y-2 max-w-xl">
+            <!-- Full Stack Architecture Core Pillars Strip -->
+            <div class="p-4 bg-slate-900/80 border border-slate-800 rounded-2xl space-y-3 max-w-xl backdrop-blur-sm">
               <div class="flex items-center justify-between text-xs text-slate-400">
                 <span class="font-mono text-[11px] uppercase tracking-wider text-slate-400 flex items-center gap-1.5">
                   <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
                   </svg>
-                  Perspectiva del Portafolio:
+                  Pilares de Ingeniería Full Stack:
                 </span>
                 <span class="text-[11px] text-cyan-400 font-mono">
-                  [Activo: {{ state.activeMode() | uppercase }}]
+                  Extremo a Extremo
                 </span>
               </div>
-              <div class="grid grid-cols-3 gap-1.5 text-xs font-medium">
-                <button 
-                  (click)="state.setProfileMode('fullstack')"
-                  [class.bg-gradient-to-r]="state.activeMode() === 'fullstack'"
-                  [class.from-cyan-600]="state.activeMode() === 'fullstack'"
-                  [class.to-indigo-600]="state.activeMode() === 'fullstack'"
-                  [class.text-white]="state.activeMode() === 'fullstack'"
-                  [class.shadow-md]="state.activeMode() === 'fullstack'"
-                  [class.text-slate-400]="state.activeMode() !== 'fullstack'"
-                  [class.bg-slate-950]="state.activeMode() !== 'fullstack'"
-                  class="py-2 px-2 rounded-lg border border-slate-800 transition-all flex items-center justify-center gap-1.5 hover:border-slate-700">
-                  <span>⚡</span>
-                  <span>Full Stack</span>
-                </button>
-                <button 
-                  (click)="state.setProfileMode('frontend')"
-                  [class.bg-gradient-to-r]="state.activeMode() === 'frontend'"
-                  [class.from-cyan-600]="state.activeMode() === 'frontend'"
-                  [class.to-indigo-600]="state.activeMode() === 'frontend'"
-                  [class.text-white]="state.activeMode() === 'frontend'"
-                  [class.shadow-md]="state.activeMode() === 'frontend'"
-                  [class.text-slate-400]="state.activeMode() !== 'frontend'"
-                  [class.bg-slate-950]="state.activeMode() !== 'frontend'"
-                  class="py-2 px-2 rounded-lg border border-slate-800 transition-all flex items-center justify-center gap-1.5 hover:border-slate-700">
-                  <span>🎨</span>
-                  <span>Frontend Focus</span>
-                </button>
-                <button 
-                  (click)="state.setProfileMode('backend')"
-                  [class.bg-gradient-to-r]="state.activeMode() === 'backend'"
-                  [class.from-cyan-600]="state.activeMode() === 'backend'"
-                  [class.to-indigo-600]="state.activeMode() === 'backend'"
-                  [class.text-white]="state.activeMode() === 'backend'"
-                  [class.shadow-md]="state.activeMode() === 'backend'"
-                  [class.text-slate-400]="state.activeMode() !== 'backend'"
-                  [class.bg-slate-950]="state.activeMode() !== 'backend'"
-                  class="py-2 px-2 rounded-lg border border-slate-800 transition-all flex items-center justify-center gap-1.5 hover:border-slate-700">
-                  <span>⚙️</span>
-                  <span>Backend Focus</span>
-                </button>
+
+              <div class="grid grid-cols-2 gap-2 text-xs">
+                <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1">
+                  <div class="font-semibold text-cyan-300 flex items-center gap-1.5 text-xs">
+                    <span>🎨</span>
+                    <span>Frontend & UI</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 leading-snug">
+                    Angular 22 Signals, React, Tailwind CSS v4, Vite
+                  </div>
+                </div>
+
+                <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1">
+                  <div class="font-semibold text-indigo-300 flex items-center gap-1.5 text-xs">
+                    <span>⚙️</span>
+                    <span>Backend & APIs</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 leading-snug">
+                    Node.js, Express, Python Flask, APIs RESTful
+                  </div>
+                </div>
+
+                <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1">
+                  <div class="font-semibold text-emerald-300 flex items-center gap-1.5 text-xs">
+                    <span>🗄️</span>
+                    <span>Bases de Datos</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 leading-snug">
+                    MySQL (Relacional), Cloud Firestore (Realtime)
+                  </div>
+                </div>
+
+                <div class="p-2.5 rounded-xl bg-slate-950/70 border border-slate-800/80 space-y-1">
+                  <div class="font-semibold text-purple-300 flex items-center gap-1.5 text-xs">
+                    <span>🧪</span>
+                    <span>Testing & Calidad</span>
+                  </div>
+                  <div class="text-[11px] text-slate-400 leading-snug">
+                    Playwright (E2E & Scraping), Jest (Unit)
+                  </div>
+                </div>
               </div>
             </div>
 
             <!-- CTAs and Direct Actions -->
             <div class="flex flex-wrap items-center gap-3 pt-2">
               <a href="#proyectos" 
-                 class="px-5 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 flex items-center gap-2">
+                 class="px-5 py-3 rounded-xl font-semibold text-sm bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-200 flex items-center gap-2 cursor-pointer">
                 <span>Ver Proyecto en Angular</span>
                 <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -128,13 +130,13 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
               </a>
 
               <a href="#contacto" 
-                 class="px-5 py-3 rounded-xl font-semibold text-sm bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex items-center gap-2">
+                 class="px-5 py-3 rounded-xl font-semibold text-sm bg-slate-900 hover:bg-slate-800 text-slate-200 border border-slate-800 hover:border-slate-700 transition-all duration-200 flex items-center gap-2 cursor-pointer">
                 <span>Contactar</span>
               </a>
 
               <button 
                 (click)="state.copyToClipboard(info.email, 'Email copiado: ' + info.email)"
-                class="px-4 py-3 rounded-xl font-medium text-xs font-mono bg-slate-900/60 hover:bg-slate-900 text-cyan-400 border border-slate-800 transition-all flex items-center gap-2">
+                class="px-4 py-3 rounded-xl font-medium text-xs font-mono bg-slate-900/60 hover:bg-slate-900 text-cyan-400 border border-slate-800 transition-all flex items-center gap-2 cursor-pointer">
                 <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                 </svg>
@@ -154,7 +156,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                   <div class="w-3 h-3 rounded-full bg-red-500/80"></div>
                   <div class="w-3 h-3 rounded-full bg-yellow-500/80"></div>
                   <div class="w-3 h-3 rounded-full bg-emerald-500/80"></div>
-                  <span class="ml-2 font-mono text-xs text-slate-400 font-medium">ampuero&#64;engineer:~</span>
+                  <span class="ml-2 font-mono text-xs text-slate-400 font-medium">ampuero&#64;fullstack:~</span>
                 </div>
                 <div class="flex items-center gap-1.5 text-[11px] font-mono text-cyan-400">
                   <span class="inline-block w-2 h-2 rounded-full bg-cyan-400 animate-pulse"></span>
@@ -172,7 +174,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                   [class.border-cyan-400]="activeTerminalTab() === tab.id"
                   [class.bg-slate-900/80]="activeTerminalTab() === tab.id"
                   [class.text-slate-400]="activeTerminalTab() !== tab.id"
-                  class="px-3 py-2 transition-colors flex items-center gap-1">
+                  class="px-3 py-2 transition-colors flex items-center gap-1 cursor-pointer">
                   <span>{{ tab.label }}</span>
                 </button>
               </div>
@@ -182,22 +184,20 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 
                 <!-- Tab: info.json -->
                 <div *ngIf="activeTerminalTab() === 'info'" class="space-y-1.5">
-                  <p class="text-slate-500">$ cat developer-profile.json</p>
+                  <p class="text-slate-500">$ cat fullstack-profile.json</p>
                   <pre class="text-cyan-300 text-[11.5px] leading-snug">
 &#123;
   "name": "{{ info.fullName }}",
+  "role": "Full Stack Software Engineer",
   "degree": "Bachiller en Ingeniería de Sistemas",
   "university": "Universidad César Vallejo",
   "location": "Lima, Perú",
-  "core_stack": [
-    "Angular (Signals, Standalone)",
-    "React / Next.js",
-    "TypeScript",
-    "Node.js & Express",
-    "Python (Flask)",
-    "MySQL & Cloud Firestore"
-  ],
-  "testing": "Playwright (E2E) & Jest (Unit)",
+  "stack": &#123;
+    "frontend": ["Angular 22 Signals", "React", "Next.js", "Tailwind CSS v4"],
+    "backend": ["Node.js", "Express", "Python Flask", "PHP", "APIs REST"],
+    "databases": ["MySQL", "Cloud Firestore"],
+    "testing": ["Playwright (E2E & Scraping)", "Jest (Unit)"]
+  &#125;,
   "open_to_work": true
 &#125;</pre>
                 </div>
@@ -206,13 +206,13 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 <div *ngIf="activeTerminalTab() === 'git'" class="space-y-2">
                   <p class="text-slate-500">$ git status --short --branch</p>
                   <p class="text-emerald-400">## main...origin/main [up to date]</p>
-                  <p class="text-slate-400"># Current Architecture state:</p>
+                  <p class="text-slate-400"># Arquitectura unificada Full Stack:</p>
                   <p class="text-indigo-300"> M src/app/projects/finanzen.component.ts</p>
                   <p class="text-cyan-300"> M src/app/signals/reactive-state.ts</p>
                   <p class="text-yellow-300"> A src/app/testing/e2e-playwright.spec.ts</p>
                   <p class="text-slate-400 pt-2">nothing to commit, working tree clean</p>
                   <p class="text-slate-500 pt-2">$ git log -1 --pretty=format:"%h - %s (%cr)"</p>
-                  <p class="text-purple-300">8f21bc9 - feat: migrate state to Angular Signals & add Dark Mode v4 (2 hours ago)</p>
+                  <p class="text-purple-300">8f21bc9 - feat: unify Full Stack architecture & Angular Signals (today)</p>
                 </div>
 
                 <!-- Tab: npm test -->
@@ -245,7 +245,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 <span class="text-slate-400 font-mono text-[11px]">¿Deseas descargar el CV?</span>
                 <button 
                   (click)="state.openCvModal()"
-                  class="font-mono text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1 text-[11px]">
+                  class="font-mono text-cyan-400 hover:text-cyan-300 font-semibold flex items-center gap-1 text-[11px] cursor-pointer">
                   <span>$ download-cv --select</span>
                   <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
@@ -293,18 +293,4 @@ export class HeroComponent {
     { id: 'git' as const, label: 'git-status.sh' },
     { id: 'tests' as const, label: 'test-suite.ts' }
   ];
-
-  readonly dynamicRole = computed(() => {
-    const mode = this.state.activeMode();
-    if (mode === 'frontend') return PERSONAL_INFO.roles.frontend;
-    if (mode === 'backend') return PERSONAL_INFO.roles.backend;
-    return PERSONAL_INFO.roles.fullstack;
-  });
-
-  readonly dynamicBio = computed(() => {
-    const mode = this.state.activeMode();
-    if (mode === 'frontend') return PERSONAL_INFO.bio.frontend;
-    if (mode === 'backend') return PERSONAL_INFO.bio.backend;
-    return PERSONAL_INFO.bio.fullstack;
-  });
 }

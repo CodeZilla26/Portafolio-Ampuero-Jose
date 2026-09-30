@@ -1,6 +1,4 @@
 import { Injectable, computed, signal } from '@angular/core';
-import { ProfileMode } from '../models/portfolio.model';
-import { PERSONAL_INFO } from '../data/portfolio.data';
 
 export interface SimulatedMovement {
   id: string;
@@ -15,9 +13,6 @@ export interface SimulatedMovement {
   providedIn: 'root'
 })
 export class PortfolioStateService {
-  // Mode switcher: 'fullstack' | 'frontend' | 'backend'
-  readonly activeMode = signal<ProfileMode>('fullstack');
-
   // Dark/Light theme state
   readonly isDarkMode = signal<boolean>(true);
 
@@ -122,26 +117,6 @@ export class PortfolioStateService {
     }
   }
 
-  // --- Profile Mode Switching ---
-  setProfileMode(mode: ProfileMode): void {
-    this.activeMode.set(mode);
-    const modeNames = {
-      fullstack: 'Modo Full Stack activado (Visión completa)',
-      frontend: 'Modo Frontend activado (Foco en UI/UX & Angular)',
-      backend: 'Modo Backend activado (Foco en APIs & Bases de Datos)'
-    };
-    this.showToast(modeNames[mode], 2500);
-
-    // Synchronize skill filter if helpful
-    if (mode === 'frontend') {
-      this.activeSkillFilter.set('frontend');
-    } else if (mode === 'backend') {
-      this.activeSkillFilter.set('backend');
-    } else {
-      this.activeSkillFilter.set('all');
-    }
-  }
-
   // --- Toast Notifications ---
   showToast(message: string, duration = 3000): void {
     if (this.toastTimeout) {
@@ -160,7 +135,6 @@ export class PortfolioStateService {
         await navigator.clipboard.writeText(text);
         this.showToast(`✓ ${customMessage}`);
       } else {
-        // Fallback
         const textarea = document.createElement('textarea');
         textarea.value = text;
         document.body.appendChild(textarea);
