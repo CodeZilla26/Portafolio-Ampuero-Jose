@@ -19,88 +19,74 @@ import { EDUCATION_DATA } from '../../data/portfolio.data';
           <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
             Educación
           </h2>
-          <p class="text-slate-400 text-sm sm:text-base mt-2">
-            Fundamentos sólidos en ingeniería de software, algoritmia y sistemas de información.
-          </p>
         </div>
 
-        <!-- Main Education Card -->
-        <div class="p-6 sm:p-8 rounded-3xl bg-slate-900/80 border border-slate-800 backdrop-blur-xl relative overflow-hidden">
-          
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <!-- Centered Academic Credential Card -->
+        <div class="max-w-3xl mx-auto relative group">
+          <!-- Subtle Glow Effect -->
+          <div class="absolute -inset-0.5 bg-gradient-to-r from-cyan-500/20 via-indigo-500/20 to-cyan-500/20 rounded-3xl blur-xl opacity-60 group-hover:opacity-100 transition duration-500"></div>
+
+          <!-- Certificate Container -->
+          <div class="relative rounded-3xl bg-slate-900/90 border border-slate-800 p-8 sm:p-12 text-center backdrop-blur-xl shadow-2xl overflow-hidden">
             
-            <!-- Left Column: Degree & Institution -->
-            <div class="lg:col-span-5 space-y-4">
-              <div class="flex items-center gap-3">
-                <div class="w-12 h-12 rounded-2xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shadow-md">
-                  <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path d="M12 14l9-5-9-5-9 5 9 5z" />
-                    <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
-                  </svg>
-                </div>
-                <div>
-                  <span class="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 mb-1">
-                    ✓ Grado Obtenido
-                  </span>
-                  <h3 class="text-xl sm:text-2xl font-bold text-white leading-tight">
-                    {{ edu.degree }}
-                  </h3>
-                </div>
-              </div>
+            <!-- Ambient Corner Gradients -->
+            <div class="absolute -top-12 -right-12 w-40 h-40 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="absolute -bottom-12 -left-12 w-40 h-40 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
 
-              <div class="space-y-1.5 pl-1">
-                <p class="text-base font-semibold text-indigo-300">
-                  {{ edu.institution }}
-                </p>
-                <div class="flex items-center gap-3 text-xs font-mono text-slate-400">
-                  <span class="flex items-center gap-1">
-                    <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    {{ edu.period }}
-                  </span>
-                  <span>•</span>
-                  <span class="flex items-center gap-1">
-                    <svg class="w-3.5 h-3.5 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                    </svg>
-                    {{ edu.location }}
-                  </span>
-                </div>
-              </div>
-
-              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed pt-2">
-                {{ edu.description }}
-              </p>
+            <!-- Verification Status Pill -->
+            <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-950/70 border border-emerald-500/30 text-emerald-300 font-mono text-xs mb-8 shadow-sm">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              <span>Formación Universitaria Completa</span>
             </div>
 
-            <!-- Right Column: Academic Highlights & Core Competencies -->
-            <div class="lg:col-span-7 space-y-4">
-              <h4 class="text-xs font-mono uppercase tracking-wider text-slate-400">
-                Competencias & Enfoque Académico:
-              </h4>
+            <!-- Academic Seal / Graduation Cap Icon -->
+            <div class="w-20 h-20 rounded-2xl bg-gradient-to-b from-cyan-500/10 to-slate-900 border border-cyan-500/30 text-cyan-400 flex items-center justify-center mx-auto mb-6 shadow-lg shadow-cyan-500/5">
+              <svg class="w-10 h-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l9-5-9-5-9 5 9 5z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" />
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 14v7" />
+              </svg>
+            </div>
 
-              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <div *ngFor="let item of edu.highlights"
-                     class="p-4 rounded-xl bg-slate-950/70 border border-slate-800 flex items-start gap-3">
-                  <span class="text-cyan-400 font-bold text-xs mt-0.5">▹</span>
-                  <span class="text-xs text-slate-300 leading-relaxed">{{ item }}</span>
-                </div>
+            <!-- Degree Title -->
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
+              {{ edu.degree }}
+            </h3>
+
+            <!-- University Name -->
+            <p class="text-lg sm:text-xl font-semibold text-cyan-300/90 mb-6">
+              {{ edu.institution }}
+            </p>
+
+            <!-- Subtle Decorative Divider -->
+            <div class="w-24 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent mx-auto mb-8"></div>
+
+            <!-- Academic Metadata Pills -->
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-mono text-slate-300">
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/60 border border-slate-800">
+                <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                <span>Periodo: <strong class="text-white">{{ edu.period }}</strong></span>
               </div>
 
-              <!-- Academic Trust Badge -->
-              <div class="mt-4 p-4 rounded-xl bg-slate-950/40 border border-slate-800/80 flex items-center justify-between text-xs font-mono text-slate-400">
-                <span class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  <span>Formación Universitaria Completa</span>
-                </span>
-                <span class="text-cyan-400 font-semibold">2020 – 2025</span>
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/60 border border-slate-800">
+                <svg class="w-4 h-4 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                <span>Ubicación: <strong class="text-white">{{ edu.location }}</strong></span>
+              </div>
+
+              <div class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-slate-950/60 border border-slate-800">
+                <svg class="w-4 h-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Grado: <strong class="text-white">Bachiller</strong></span>
               </div>
             </div>
 
           </div>
-
         </div>
 
       </div>
