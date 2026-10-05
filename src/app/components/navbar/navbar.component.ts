@@ -67,11 +67,11 @@ import { PortfolioStateService } from '../../services/portfolio-state.service';
           <!-- Download CV Button -->
           <button 
             (click)="state.openCvModal()"
-            class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-cyan-500/10 dark:bg-gradient-to-r dark:from-cyan-500/15 dark:to-indigo-500/15 text-cyan-700 dark:text-cyan-300 hover:bg-cyan-600 dark:hover:from-cyan-500 dark:hover:to-indigo-600 hover:text-white dark:hover:text-slate-950 border border-cyan-500/30 transition-all duration-200 shadow-sm cursor-pointer shimmer-btn">
-            <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            class="hidden sm:inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gradient-to-r from-cyan-600 to-indigo-600 hover:from-cyan-500 hover:to-indigo-500 text-white shadow-sm hover:shadow transition-all duration-200 cursor-pointer shimmer-btn">
+            <svg class="w-3.5 h-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            <span>Descargar CV</span>
+            <span class="text-white">Descargar CV</span>
           </button>
 
           <!-- Mobile Menu Button -->
@@ -109,11 +109,11 @@ import { PortfolioStateService } from '../../services/portfolio-state.service';
         <!-- Mobile CV CTA -->
         <button 
           (click)="state.openCvModal(); mobileMenuOpen.set(false)"
-          class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-semibold bg-gradient-to-r from-cyan-600 to-indigo-600 text-white shadow-md shimmer-btn">
-          <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          class="w-full flex items-center justify-center gap-2 py-2.5 px-4 rounded-lg text-sm font-semibold bg-gradient-to-r from-cyan-600 to-indigo-600 text-white shadow-md cursor-pointer shimmer-btn">
+          <svg class="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
-          Descargar CV
+          <span class="text-white">Descargar CV</span>
         </button>
       </div>
     </header>

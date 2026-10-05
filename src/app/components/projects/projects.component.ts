@@ -7,7 +7,7 @@ import { ANGULAR_STAR_PROJECT } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="proyectos" class="py-20 border-t border-slate-800/80 relative overflow-hidden">
+    <section id="proyectos" class="py-20 border-t border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden">
       <!-- Background Ambient Glow with Pulse -->
       <div class="absolute top-1/2 right-0 sm:right-1/4 w-[280px] sm:w-[450px] h-[200px] sm:h-[350px] bg-gradient-to-br from-indigo-600/10 via-cyan-500/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow"></div>
       

@@ -9,7 +9,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule, FormsModule],
   template: `
-    <section id="contacto" class="py-20 border-t border-slate-800/80 relative overflow-hidden">
+    <section id="contacto" class="py-20 border-t border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden">
       <!-- Glow effect -->
       <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[280px] sm:w-[500px] h-[180px] sm:h-[250px] bg-gradient-to-t from-cyan-500/10 via-indigo-500/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10"></div>
       

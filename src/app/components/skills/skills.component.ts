@@ -16,7 +16,7 @@ interface SkillCategory {
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="skills" class="py-20 border-t border-slate-800/80 relative overflow-hidden">
+    <section id="skills" class="py-20 border-t border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->

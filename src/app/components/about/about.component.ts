@@ -8,7 +8,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="sobre-mi" class="py-24 border-t border-slate-800/80 relative overflow-hidden">
+    <section id="sobre-mi" class="py-24 border-t border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden">
       <!-- Ambient Glow in background with breathing light -->
       <div class="absolute top-1/2 left-0 w-[500px] h-[400px] bg-gradient-to-r from-cyan-500/10 via-indigo-500/10 to-transparent rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow"></div>
       

@@ -7,7 +7,7 @@ import { EXPERIENCES } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <section id="experiencia" class="py-20 border-t border-slate-800/80 relative overflow-hidden">
+    <section id="experiencia" class="py-20 border-t border-slate-200/80 dark:border-slate-800/80 relative overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header (Clean without extra text) -->
@@ -49,7 +49,7 @@ import { EXPERIENCES } from '../../data/portfolio.data';
                   </span>
 
                   <span class="inline-flex items-center gap-1 text-xs text-slate-500 dark:text-slate-400 font-mono">
-                    <svg class="w-3.5 h-3.5 text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg class="w-3.5 h-3.5 text-slate-500 dark:text-slate-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
