@@ -16,7 +16,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
-        <div class="text-left max-w-2xl mb-12">
+        <div class="text-left max-w-2xl mb-12 reveal-on-scroll">
           <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
             <span>06. Canales de Comunicación</span>
             <span class="w-12 h-px bg-cyan-400/40"></span>
@@ -32,10 +32,10 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           
           <!-- Left Column: Direct Fast-Action Cards (5 cols) -->
-          <div class="lg:col-span-5 space-y-4">
+          <div class="lg:col-span-5 space-y-4 reveal-on-scroll reveal-delay-1">
             
             <!-- Email Card with Copy button -->
-            <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-slate-700 backdrop-blur-sm transition-all group overflow-hidden">
+            <div class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-cyan-500/40 hover:shadow-lg hover:shadow-cyan-500/10 hover:-translate-y-1 backdrop-blur-sm transition-all duration-300 group overflow-hidden">
               <div class="flex items-center justify-between gap-2 sm:gap-4 min-w-0">
                 <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                   <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 group-hover:scale-105 transition-transform shrink-0">
@@ -66,7 +66,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
             <a [href]="info.whatsappUrl" 
                target="_blank" 
                rel="noopener noreferrer"
-               class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 backdrop-blur-sm transition-all flex items-center justify-between group block overflow-hidden min-w-0">
+               class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-emerald-500/40 hover:shadow-lg hover:shadow-emerald-500/10 hover:-translate-y-1 backdrop-blur-sm transition-all duration-300 flex items-center justify-between group block overflow-hidden min-w-0">
               <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 group-hover:scale-105 transition-transform shrink-0">
                   <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -81,7 +81,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 </div>
               </div>
 
-              <span class="text-xs font-mono text-emerald-400 flex items-center gap-1 shrink-0">
+              <span class="text-xs font-mono text-emerald-400 flex items-center gap-1 shrink-0 group-hover:translate-x-1 transition-transform">
                 Chat →
               </span>
             </a>
@@ -90,7 +90,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
             <a [href]="info.linkedinUrl" 
                target="_blank" 
                rel="noopener noreferrer"
-               class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/40 backdrop-blur-sm transition-all flex items-center justify-between group block overflow-hidden min-w-0">
+               class="p-4 sm:p-5 rounded-2xl bg-slate-900/80 border border-slate-800 hover:border-indigo-500/40 hover:shadow-lg hover:shadow-indigo-500/10 hover:-translate-y-1 backdrop-blur-sm transition-all duration-300 flex items-center justify-between group block overflow-hidden min-w-0">
               <div class="flex items-center gap-2.5 sm:gap-3 min-w-0">
                 <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 group-hover:scale-105 transition-transform shrink-0">
                   <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -105,7 +105,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 </div>
               </div>
 
-              <span class="text-xs font-mono text-indigo-400 flex items-center gap-1 shrink-0">
+              <span class="text-xs font-mono text-indigo-400 flex items-center gap-1 shrink-0 group-hover:translate-x-1 transition-transform">
                 Conectar →
               </span>
             </a>
@@ -113,8 +113,8 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
           </div>
 
           <!-- Right Column: Interactive Message Composer (7 cols) -->
-          <div class="lg:col-span-7 w-full min-w-0">
-            <div class="p-5 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800 backdrop-blur-xl shadow-2xl space-y-5 overflow-hidden">
+          <div class="lg:col-span-7 w-full min-w-0 reveal-on-scroll reveal-delay-2">
+            <div class="p-5 sm:p-8 rounded-3xl bg-slate-900/90 border border-slate-800 backdrop-blur-xl shadow-2xl space-y-5 overflow-hidden transition-all duration-300 hover:border-slate-700/80">
               
               <div class="border-b border-slate-800 pb-3">
                 <h3 class="text-base sm:text-lg font-bold text-white font-mono flex items-center gap-2">
@@ -173,7 +173,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
                 <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 w-full">
                   <button 
                     (click)="copyFormattedMessage()"
-                    class="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-mono text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 border border-slate-700 transition-all flex items-center justify-center gap-1.5 cursor-pointer">
+                    class="w-full sm:w-auto px-4 py-2.5 rounded-xl text-xs font-mono text-slate-300 hover:text-white bg-slate-800/80 hover:bg-slate-800 border border-slate-700 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-1.5 cursor-pointer">
                     <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" />
                     </svg>
@@ -182,7 +182,7 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
 
                   <button 
                     (click)="sendEmail()"
-                    class="w-full sm:w-auto px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 font-mono shadow-lg shadow-cyan-500/25 transition-all flex items-center justify-center gap-2 cursor-pointer">
+                    class="shimmer-btn w-full sm:w-auto px-6 py-2.5 rounded-xl text-xs sm:text-sm font-semibold bg-gradient-to-r from-cyan-500 to-indigo-600 hover:from-cyan-400 hover:to-indigo-500 text-slate-950 font-mono shadow-lg shadow-cyan-500/25 hover:-translate-y-0.5 active:translate-y-0 transition-all flex items-center justify-center gap-2 cursor-pointer">
                     <span>Enviar a Jose Ampuero</span>
                     <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />

@@ -20,7 +20,7 @@ interface SkillCategory {
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
-        <div class="text-left max-w-2xl mb-12">
+        <div class="text-left max-w-2xl mb-12 reveal-on-scroll">
           <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
             <span>05. Stack Tecnológico</span>
             <span class="w-12 h-px bg-cyan-400/40"></span>
@@ -32,21 +32,27 @@ interface SkillCategory {
 
         <!-- Categorized Skills Grid (Direct Separation, No Filters) -->
         <div class="space-y-10">
-          <div *ngFor="let cat of categories" class="space-y-4">
+          <div *ngFor="let cat of categories; let i = index" 
+               class="space-y-4 reveal-on-scroll"
+               [class.reveal-delay-1]="i % 2 === 1"
+               [class.reveal-delay-2]="i % 2 === 0 && i > 0">
             
             <!-- Category Title Line -->
             <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-400 flex items-center gap-3">
-              <span>{{ cat.title }}</span>
+              <span class="flex items-center gap-2">
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span>{{ cat.title }}</span>
+              </span>
               <span class="h-px flex-1 bg-slate-800"></span>
             </h3>
 
             <!-- Tech Items Grid (Only Icon + Name) -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2.5 sm:gap-4">
               <div *ngFor="let tech of cat.items"
-                   class="flex items-center gap-2.5 sm:gap-3.5 p-2.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/40 hover:bg-slate-800/50 hover:shadow-lg hover:shadow-cyan-500/5 transition-all group cursor-default min-w-0 overflow-hidden">
+                   class="flex items-center gap-2.5 sm:gap-3.5 p-2.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/50 hover:bg-slate-800/80 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1.5 transition-all duration-300 group cursor-default min-w-0 overflow-hidden">
                 
-                <!-- Icon Box -->
-                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-center p-1.5 sm:p-2 shrink-0 group-hover:scale-110 transition-transform">
+                <!-- Icon Box with Dynamic Rotation on Hover -->
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-center p-1.5 sm:p-2 shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <ng-container [ngSwitch]="tech.icon">
                     
                     <!-- Angular -->

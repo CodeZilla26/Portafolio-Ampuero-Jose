@@ -11,7 +11,7 @@ import { EDUCATION_DATA } from '../../data/portfolio.data';
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Header -->
-        <div class="text-left max-w-2xl mb-12">
+        <div class="text-left max-w-2xl mb-12 reveal-on-scroll">
           <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
             <span>04. Formación Académica</span>
             <span class="w-12 h-px bg-cyan-400/40"></span>
@@ -23,16 +23,16 @@ import { EDUCATION_DATA } from '../../data/portfolio.data';
 
         <!-- Clean Modern Education Card -->
         <div class="max-w-4xl mx-auto">
-          <div class="relative rounded-2xl bg-slate-900/60 border border-slate-800 p-5 sm:p-8 hover:border-slate-700/80 transition-all backdrop-blur-sm overflow-hidden">
+          <div class="relative rounded-2xl bg-slate-900/60 border border-slate-800 p-5 sm:p-8 hover:border-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1.5 transition-all duration-300 backdrop-blur-sm overflow-hidden reveal-on-scroll reveal-delay-1">
             
-            <!-- Subtle Left Accent Indicator -->
-            <div class="absolute top-6 bottom-6 left-0 w-1 bg-gradient-to-b from-cyan-400 via-indigo-500 to-transparent rounded-r"></div>
+            <!-- Subtle Left Accent Indicator with Breathing Glow -->
+            <div class="absolute top-6 bottom-6 left-0 w-1 bg-gradient-to-b from-cyan-400 via-indigo-500 to-transparent rounded-r animate-pulse"></div>
 
             <div class="pl-1 sm:pl-4 space-y-4 min-w-0 break-words">
               <!-- Status & Meta Row -->
               <div class="flex flex-wrap items-center justify-between gap-3">
-                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-950/80 text-emerald-400 border border-emerald-800/60">
-                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                <span class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-mono font-medium bg-emerald-950/80 text-emerald-400 border border-emerald-800/60 shadow-sm shadow-emerald-500/10">
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
                   Formación Universitaria Completa
                 </span>
                 
