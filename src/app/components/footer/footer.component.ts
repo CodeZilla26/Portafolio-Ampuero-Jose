@@ -8,30 +8,30 @@ import { PERSONAL_INFO } from '../../data/portfolio.data';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <footer class="py-12 border-t border-slate-800/80 bg-slate-950 text-slate-400 text-xs w-full max-w-full overflow-hidden">
+    <footer class="py-12 border-t border-slate-200/80 dark:border-slate-800/80 bg-slate-50 dark:bg-slate-950 text-slate-600 dark:text-slate-400 text-xs w-full max-w-full overflow-hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
         
         <!-- Left: Branding & Role -->
         <div class="space-y-1 text-center sm:text-left">
-          <div class="font-bold text-white text-sm">
+          <div class="font-bold text-slate-900 dark:text-white text-sm">
             {{ info.fullName }}
           </div>
-          <p class="text-slate-400">
+          <p class="text-slate-500 dark:text-slate-400">
             Ingeniero de Software
           </p>
         </div>
 
         <!-- Right: Links & Back to Top -->
         <div class="flex items-center gap-4 font-medium">
-          <a [href]="info.linkedinUrl" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">
+          <a [href]="info.linkedinUrl" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
             LinkedIn
           </a>
-          <span class="text-slate-700">•</span>
-          <a [href]="info.githubUrl" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-400 transition-colors">
+          <span class="text-slate-300 dark:text-slate-700">•</span>
+          <a [href]="info.githubUrl" target="_blank" rel="noopener noreferrer" class="hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors">
             GitHub
           </a>
-          <span class="text-slate-700">•</span>
-          <button (click)="scrollToTop()" class="hover:text-white transition-colors flex items-center gap-1 cursor-pointer">
+          <span class="text-slate-300 dark:text-slate-700">•</span>
+          <button (click)="scrollToTop()" class="hover:text-slate-900 dark:hover:text-white transition-colors flex items-center gap-1 cursor-pointer">
             <span>Inicio</span>
             <span>↑</span>
           </button>

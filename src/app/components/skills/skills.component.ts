@@ -21,11 +21,11 @@ interface SkillCategory {
         
         <!-- Section Header -->
         <div class="text-left max-w-2xl mb-12 reveal-on-scroll">
-          <div class="inline-flex items-center gap-2 text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
+          <div class="inline-flex items-center gap-2 text-cyan-600 dark:text-cyan-400 font-mono text-xs uppercase tracking-wider mb-2">
             <span>05. Stack Tecnológico</span>
-            <span class="w-12 h-px bg-cyan-400/40"></span>
+            <span class="w-12 h-px bg-cyan-500/40 dark:bg-cyan-400/40"></span>
           </div>
-          <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white tracking-tight">
             Habilidades
           </h2>
         </div>
@@ -38,21 +38,21 @@ interface SkillCategory {
                [class.reveal-delay-2]="i % 2 === 0 && i > 0">
             
             <!-- Category Title Line -->
-            <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-400 flex items-center gap-3">
+            <h3 class="text-xs font-mono uppercase tracking-wider text-cyan-600 dark:text-cyan-400 flex items-center gap-3 font-semibold">
               <span class="flex items-center gap-2">
-                <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+                <span class="w-1.5 h-1.5 rounded-full bg-cyan-500 dark:bg-cyan-400 animate-pulse"></span>
                 <span>{{ cat.title }}</span>
               </span>
-              <span class="h-px flex-1 bg-slate-800"></span>
+              <span class="h-px flex-1 bg-slate-200 dark:bg-slate-800"></span>
             </h3>
 
             <!-- Tech Items Grid (Only Icon + Name) -->
             <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-2.5 sm:gap-4">
               <div *ngFor="let tech of cat.items"
-                   class="flex items-center gap-2.5 sm:gap-3.5 p-2.5 sm:p-4 rounded-xl bg-slate-900/60 border border-slate-800/80 hover:border-cyan-500/50 hover:bg-slate-800/80 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1.5 transition-all duration-300 group cursor-default min-w-0 overflow-hidden">
+                   class="flex items-center gap-2.5 sm:gap-3.5 p-2.5 sm:p-4 rounded-xl bg-white/80 dark:bg-slate-900/60 border border-slate-200 dark:border-slate-800/80 hover:border-cyan-500/50 hover:bg-slate-50 dark:hover:bg-slate-800/80 hover:shadow-xl hover:shadow-cyan-500/10 hover:-translate-y-1.5 transition-all duration-300 group cursor-default min-w-0 overflow-hidden shadow-sm">
                 
                 <!-- Icon Box with Dynamic Rotation on Hover -->
-                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-slate-950/80 border border-slate-800 flex items-center justify-center p-1.5 sm:p-2 shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-lg bg-slate-100 dark:bg-slate-950/80 border border-slate-200 dark:border-slate-800 flex items-center justify-center p-1.5 sm:p-2 shrink-0 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300">
                   <ng-container [ngSwitch]="tech.icon">
                     
                     <!-- Angular -->
@@ -73,7 +73,7 @@ interface SkillCategory {
                     </svg>
 
                     <!-- Next.js -->
-                    <svg *ngSwitchCase="'nextjs'" class="w-full h-full text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <svg *ngSwitchCase="'nextjs'" class="w-full h-full text-slate-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M12 0C5.37 0 0 5.37 0 12s5.37 12 12 12 12-5.37 12-12S18.63 0 12 0zm5.8 17.8L9.2 6.5h2.1l7.4 10.3c-.9.5-1.9.8-2.9 1zm-.8-3.4V6.5h1.9v9.7c-.7-.6-1.3-1.2-1.9-1.8zM6.5 6.5h1.9v11H6.5v-11z"/>
                     </svg>
 
@@ -116,7 +116,7 @@ interface SkillCategory {
                     </svg>
 
                     <!-- Express -->
-                    <svg *ngSwitchCase="'express'" class="w-full h-full text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <svg *ngSwitchCase="'express'" class="w-full h-full text-slate-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M18.8 6.5l-4.2 5.5 4.6 5.5h-2.6l-3.3-4.1-3.3 4.1H7.4l4.6-5.5-4.2-5.5h2.6l3 3.9 3-3.9h2.4z"/>
                     </svg>
 
@@ -127,7 +127,7 @@ interface SkillCategory {
                     </svg>
 
                     <!-- Flask -->
-                    <svg *ngSwitchCase="'flask'" class="w-full h-full text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <svg *ngSwitchCase="'flask'" class="w-full h-full text-slate-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor">
                       <path d="M10 2h4v2h-1v5.6l4.8 8.4c.8 1.4-.2 3-1.8 3H8c-1.6 0-2.6-1.6-1.8-3L11 9.6V4h-1V2zm2 10.5l-3.5 6.1c-.2.4.1.8.5.8h6c.4 0 .7-.4.5-.8L12 12.5z"/>
                     </svg>
 
@@ -137,7 +137,7 @@ interface SkillCategory {
                     </svg>
 
                     <!-- APIs REST -->
-                    <svg *ngSwitchCase="'api'" class="w-full h-full text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <svg *ngSwitchCase="'api'" class="w-full h-full text-cyan-500 dark:text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                       <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
                     </svg>
 
@@ -181,7 +181,7 @@ interface SkillCategory {
                     </svg>
 
                     <!-- GitHub -->
-                    <svg *ngSwitchCase="'github'" class="w-full h-full text-white" viewBox="0 0 24 24" fill="currentColor">
+                    <svg *ngSwitchCase="'github'" class="w-full h-full text-slate-900 dark:text-white" viewBox="0 0 24 24" fill="currentColor">
                       <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
                     </svg>
 
@@ -206,7 +206,7 @@ interface SkillCategory {
                 </div>
 
                 <!-- Tech Name -->
-                <span class="text-xs min-[400px]:text-sm sm:text-base font-semibold text-slate-200 group-hover:text-white transition-colors truncate min-w-0" [title]="tech.name">
+                <span class="text-xs min-[400px]:text-sm sm:text-base font-semibold text-slate-700 dark:text-slate-200 group-hover:text-cyan-700 dark:group-hover:text-white transition-colors truncate min-w-0" [title]="tech.name">
                   {{ tech.name }}
                 </span>
 
