@@ -43,16 +43,17 @@ export class App implements AfterViewInit {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('is-revealed');
-              observer.unobserve(entry.target);
+            } else {
+              entry.target.classList.remove('is-revealed');
             }
           });
         },
-        { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+        { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
       );
 
       setTimeout(() => {
         document.querySelectorAll('.reveal-on-scroll').forEach((el) => observer.observe(el));
-      }, 60);
+      }, 80);
     }
   }
 }

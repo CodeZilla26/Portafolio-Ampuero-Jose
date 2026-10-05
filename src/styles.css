@@ -5,6 +5,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
     overflow-x: hidden;
     max-width: 100%;
@@ -117,29 +118,61 @@ html.light .border-slate-700 {
    Fluid Animations & Dynamic Micro-Interactions System
    ============================================================ */
 
-/* Scroll-Driven Reveal Animations */
+/* Scroll-Driven Reveal & Conceal Animations (Both appearing and disappearing) */
 .reveal-on-scroll {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(38px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
   will-change: opacity, transform;
 }
 
 .reveal-on-scroll.is-revealed {
   opacity: 1;
   transform: translateY(0);
+  transition: opacity 1.15s cubic-bezier(0.22, 1, 0.36, 1), transform 1.15s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.reveal-delay-1 {
-  transition-delay: 100ms;
+.reveal-on-scroll.is-revealed.reveal-delay-1 {
+  transition-delay: 160ms;
 }
 
-.reveal-delay-2 {
-  transition-delay: 200ms;
+.reveal-on-scroll.is-revealed.reveal-delay-2 {
+  transition-delay: 320ms;
 }
 
-.reveal-delay-3 {
-  transition-delay: 300ms;
+.reveal-on-scroll.is-revealed.reveal-delay-3 {
+  transition-delay: 480ms;
+}
+
+/* Visually Rich Ambient Glowing Orbs */
+.ambient-orb-cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.24) 0%, rgba(6, 182, 212, 0.10) 45%, rgba(6, 182, 212, 0) 70%);
+  filter: blur(80px);
+}
+
+.ambient-orb-indigo {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.24) 0%, rgba(99, 102, 241, 0.10) 45%, rgba(99, 102, 241, 0) 70%);
+  filter: blur(90px);
+}
+
+.ambient-orb-purple {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.20) 0%, rgba(139, 92, 246, 0.08) 45%, rgba(168, 85, 247, 0) 70%);
+  filter: blur(85px);
+}
+
+html.light .ambient-orb-cyan {
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, rgba(6, 182, 212, 0.03) 50%, transparent 70%);
+  filter: blur(80px);
+}
+
+html.light .ambient-orb-indigo {
+  background: radial-gradient(circle, rgba(99, 102, 241, 0.10) 0%, rgba(99, 102, 241, 0.03) 50%, transparent 70%);
+  filter: blur(90px);
+}
+
+html.light .ambient-orb-purple {
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0.02) 50%, transparent 70%);
+  filter: blur(85px);
 }
 
 /* Accessibility: Disable motion if user prefers */
@@ -158,13 +191,13 @@ html.light .border-slate-700 {
   }
 }
 
-/* Floating Ambient Orbs */
+/* Floating Ambient Orbs Drift Keyframes */
 @keyframes floatSlow {
   0%, 100% {
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(-14px, -24px) scale(1.08);
+    transform: translate(-35px, -50px) scale(1.15);
   }
 }
 
@@ -173,27 +206,27 @@ html.light .border-slate-700 {
     transform: translate(0, 0) scale(1);
   }
   50% {
-    transform: translate(14px, 20px) scale(0.95);
+    transform: translate(40px, 45px) scale(0.88);
   }
 }
 
 @keyframes pulseGlow {
   0%, 100% {
-    opacity: 0.12;
+    opacity: 0.15;
     transform: scale(1);
   }
   50% {
-    opacity: 0.28;
-    transform: scale(1.08);
+    opacity: 0.35;
+    transform: scale(1.1);
   }
 }
 
 .animate-float-slow {
-  animation: floatSlow 12s ease-in-out infinite;
+  animation: floatSlow 14s ease-in-out infinite;
 }
 
 .animate-float-reverse {
-  animation: floatReverse 15s ease-in-out infinite;
+  animation: floatReverse 17s ease-in-out infinite;
 }
 
 .animate-pulse-glow {

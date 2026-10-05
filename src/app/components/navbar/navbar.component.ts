@@ -7,7 +7,7 @@ import { PortfolioStateService } from '../../services/portfolio-state.service';
   standalone: true,
   imports: [CommonModule],
   template: `
-    <header class="sticky top-0 z-40 w-full max-w-full backdrop-blur-md bg-slate-950/80 dark:bg-slate-950/80 border-b border-slate-800/80 transition-colors duration-300 overflow-x-hidden">
+    <header class="fixed top-0 left-0 right-0 z-50 w-full max-w-full backdrop-blur-md bg-slate-950/85 dark:bg-slate-950/85 border-b border-slate-800/80 transition-colors duration-300">
       
       <!-- Top Scroll Progress Bar -->
       <div class="absolute bottom-0 left-0 h-[2px] bg-gradient-to-r from-cyan-400 via-indigo-500 to-purple-500 transition-all duration-75 ease-out z-50 pointer-events-none"
